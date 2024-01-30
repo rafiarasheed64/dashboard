@@ -1,0 +1,2593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "segoe ui", Roboto, "helvetica neue", Arial, "noto sans", sans-serif, "apple color emoji", "segoe ui emoji", "segoe ui symbol", "noto color emoji";
+        }
+
+        .first {
+            height: max-content;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .navbar {
+            height: 10%;
+            width: 100%;
+            background-color: rgb(250, 251, 252);
+            display: flex;
+            align-items: center;
+            position: fixed;
+            z-index: 2;
+        }
+
+        .logo-div {
+            height: 100%;
+            width: 19%;
+            margin-left: 3%;
+            /* border: 1px solid #000; */
+            /* background-color: red; */
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s linear;
+        }
+
+        .icn1 {
+            font-size: 30px;
+            color: blue;
+        }
+
+        .right1 {
+            margin-left: -13%;
+        }
+
+        .main {
+            height: 90%;
+            width: 100%;
+            display: flex;
+            margin-top: 5%;
+        }
+
+        .box {
+            height: max-content;
+            width: 22%;
+            padding: 22px;
+            background-color: rgb(237, 239, 241);
+            transition: all 0.3s linear;
+            /* border: 1px solid #000; */
+            /* position: fixed; */
+        }
+
+        .heading1 {
+            color: blue;
+            margin-top: 10px;
+        }
+
+        .bx {
+            height: max-content;
+            width: 85%;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .bx0 {
+            height: 40px;
+            width: 100%;
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .icn2 {
+            color: rgb(222, 223, 224);
+            font-size: 20px;
+        }
+
+        .heading2 {
+            margin-left: 5%;
+            font-weight: 700;
+        }
+
+        .icn3 {
+            margin-left: 25%;
+            color: rgb(222, 223, 224);
+            font-size: 14px;
+        }
+
+        .drop1 {
+            height: 0;
+            overflow: hidden;
+            /* padding: 0 0 0 0; */
+        }
+
+        .list0 {
+            margin-top: 10px;
+            list-style: none;
+            padding: 10px 15px;
+        }
+
+        .show0 {
+            transition: all 0.3s linear;
+            height: auto;
+        }
+
+        .right {
+            margin-left: -20%;
+        }
+
+        .input-div {
+            height: 100%;
+            width: max-content;
+            display: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .inp {
+            height: 40px;
+            width: 0%;
+            display: none;
+            background-color: rgb(237, 238, 239);
+            border-radius: 20px;
+            padding-left: 10px;
+            border: none;
+            outline: none;
+        }
+
+        .circle {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            background-color: rgb(223, 224, 225);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: blue;
+            font-size: 18px;
+        }
+
+        .icn5 {
+            transform: rotateX(50px);
+            color: blue;
+        }
+
+        .rotate {
+            transform: rotateX(150px);
+        }
+
+        .icn4 {
+            margin-top: 6px;
+            margin-left: 10px;
+            font-size: 20px;
+            font-weight: 800;
+            color: blue;
+            display: none;
+        }
+
+        .dis {
+            display: block;
+        }
+
+        .inc {
+            width: 25%;
+        }
+
+        .inc1 {
+            width: 65%;
+            display: block;
+        }
+
+        .list {
+            margin-left: 2%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+            width: 30%;
+            /* border: 1px solid #000; */
+        }
+
+        .lst {
+            width: 32%;
+            /* border: 1px solid #000; */
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .icn6 {
+            color: rgb(204, 215, 243);
+        }
+
+        .icn7 {
+            color: rgb(181, 186, 190);
+        }
+
+        .red-circle {
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+            background-color: rgb(217, 37, 80);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dropdown1 {
+            height: 250px;
+            width: 900px;
+            background-color: white;
+            position: absolute;
+            left: 22%;
+            border: 1px solid rgb(215, 220, 229);
+            border-radius: 5px;
+        }
+
+        .box1 {
+            height: 90%;
+            width: 33%;
+            margin-top: 1.5%;
+            padding: 10px 20px;
+            display: inline-block;
+            border-right: 1px solid rgb(215, 220, 229);
+        }
+
+        .text {
+            color: rgb(117, 125, 133);
+        }
+
+        .list1 {
+            list-style: none;
+        }
+
+        .lst1 {
+            margin-top: 20px;
+            /* border: 1px solid #000; */
+            display: flex;
+        }
+
+        .red-circle1 {
+            margin-left: 50%;
+            height: 20px;
+            width: 23px;
+            border-radius: 50%;
+            background-color: rgb(217, 37, 80);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .green-div {
+            height: 22px;
+            width: 45px;
+            margin-left: 45%;
+            border-radius: 5px;
+            background-color: rgb(58, 196, 125);
+            color: white;
+            font-size: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .yellow-div {
+            font-size: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 20px;
+            width: 22px;
+            margin-left: 45%;
+            border-radius: 3px;
+            background-color: rgb(247, 185, 36);
+        }
+
+        .dropdown2 {
+            height: 300px;
+            width: 270px;
+            background-color: white;
+            position: absolute;
+            border-radius: 5px;
+            left: 35%;
+        }
+
+        .image1 {
+            height: 30%;
+            width: 100%;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            position: relative;
+        }
+
+        .heading3 {
+            color: rgb(241, 237, 237);
+            font-size: 24px;
+            position: absolute;
+            left: 29%;
+            top: 5%;
+        }
+
+        .text1 {
+            color: rgb(241, 237, 237);
+            font-size: 18px;
+            position: absolute;
+            left: 4%;
+            top: 14%;
+        }
+
+        .heading4 {
+            color: blue;
+            margin-left: 15px;
+            margin-top: 15px;
+        }
+
+        .lst2 {
+            margin-left: 15px;
+            margin-top: 15px;
+        }
+
+        .button {
+            background-color: rgb(217, 37, 80);
+            color: white;
+            border: none;
+            margin-left: 15px;
+            margin-top: 15px;
+            height: 40px;
+            width: 100px;
+            border-radius: 5px;
+        }
+
+        .dropdown3 {
+            height: 330px;
+            width: 330px;
+            background-color: white;
+            position: absolute;
+            border-radius: 5px;
+            left: 45%;
+        }
+
+        .heading5 {
+            position: absolute;
+            left: 20px;
+            top: 8px;
+            color: white;
+            font-size: 22px;
+        }
+
+        .text2 {
+            position: absolute;
+            left: 20px;
+            top: 36px;
+        }
+
+        .button1 {
+            position: absolute;
+            left: 20px;
+            top: 60px;
+            padding: 5px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 3px;
+        }
+
+        .yellow {
+            height: 25px;
+            width: 25px;
+            border-radius: 3px;
+            background-color: rgb(247, 185, 36);
+            position: absolute;
+            left: 80px;
+            top: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .icon-div {
+            height: 100%;
+            width: 16%;
+            /* border: 1px solid #000; */
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .circle-div {
+            height: 100%;
+            width: 21%;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid #000; */
+            background-color: rgb(232, 231, 234);
+        }
+
+        .cir-div {
+            height: 100%;
+            width: 80%;
+            border-radius: 50%;
+        }
+
+        .icn8 {
+            color: blue;
+        }
+
+        .icn9 {
+            color: rgb(217, 37, 80);
+        }
+
+        .icn10 {
+            color: rgb(58, 196, 125);
+        }
+
+        .box2 {
+            height: 100%;
+            width: max-content;
+            display: flex;
+            margin-left: 20px;
+            align-items: center;
+        }
+
+        .image2 {
+            height: 80%;
+            width: 33%;
+            border-radius: 50%;
+        }
+
+        .icn11 {
+            margin-left: 10px;
+        }
+
+        .heading6 {
+            color: rgb(119, 125, 130);
+            font-size: 16px;
+        }
+
+        .text3 {
+            color: rgb(161, 165, 169);
+            font-size: 14px;
+        }
+
+        .blue-div {
+            height: 33px;
+            width: 48px;
+            background-color: blue;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .icn12 {
+            color: white;
+        }
+
+        .line {
+            height: 70%;
+            width: 1px;
+            background-color: rgb(222, 226, 230);
+            margin-left: 10px;
+        }
+
+        .icn13 {
+            font-size: 25px;
+            color: black;
+            margin-left: 20px;
+        }
+
+        .dropdown4 {
+            height: 350px;
+            width: 350px;
+            border: 1px solid rgb(200, 204, 216);
+            background-color: white;
+            position: absolute;
+            left: 40%;
+            border-radius: 5px;
+        }
+
+        .clr {
+            height: 25%;
+            width: 100%;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            background: linear-gradient(to right, rgb(135, 135, 243), rgb(145, 92, 145));
+        }
+
+        .text4 {
+            color: rgb(230, 230, 230);
+            position: absolute;
+            top: 10%;
+            left: 20px;
+        }
+
+        .box3 {
+            height: 30%;
+            width: 100%;
+            display: flex;
+
+        }
+
+        .bx3 {
+            height: 100%;
+            width: 33.3%;
+            border: 1px solid rgb(222, 226, 230);
+        }
+
+        .icn14 {
+            font-size: 40px;
+            margin-left: 30%;
+            color: rgb(248, 216, 242);
+        }
+
+        .text5 {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 15px;
+        }
+
+        .button2 {
+            background-color: rgb(63, 106, 216);
+            color: white;
+            padding: 7px;
+            border: none;
+            border-radius: 4px;
+            margin-left: 38%;
+            margin-top: 10px;
+        }
+
+        .dropdown5 {
+            height: 380px;
+            width: 350px;
+            border: 1px solid rgb(200, 204, 216);
+            background-color: white;
+            position: absolute;
+            left: 42%;
+            border-radius: 5px;
+        }
+
+        .clr1 {
+            height: 30%;
+            width: 100%;
+            position: relative;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            background-image: url(./dashboard-image/city3.jpg);
+        }
+
+        .before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(to right, rgba(243, 139, 243, 0.712), rgba(130, 183, 247, 0.767));
+        }
+
+        .heading6 {
+            text-align: center;
+            color: black;
+            margin-top: 5%;
+            font-size: 24px;
+        }
+
+        .text6 {
+            color: black;
+            text-align: center;
+        }
+
+        .list2 {
+            list-style: none;
+            display: flex;
+            border: 1px solid rgb(226, 230, 239);
+            justify-content: space-between;
+            width: 100%;
+            padding: 5px;
+            height: max-content;
+        }
+
+        .lst3 {
+            padding: 7px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .lst03 {
+            background-color: blue;
+            color: white;
+        }
+
+        .lst3:hover {
+            background-color: blue;
+            color: white;
+        }
+
+        .bx4 {
+            height: max-content;
+            width: 80%;
+            margin-top: 10px;
+            margin-left: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .circle0 {
+            height: 15px;
+            width: 15px;
+            border: 3px solid #f86666;
+            border-radius: 50%;
+        }
+
+        .text7 {
+            margin-left: 10px;
+        }
+
+        .circle1 {
+            height: 15px;
+            width: 15px;
+            border: 3px solid yellow;
+            border-radius: 50%;
+        }
+
+        .circle2 {
+            height: 15px;
+            width: 15px;
+            border: 3px solid green;
+            border-radius: 50%;
+        }
+
+        .red {
+            padding: 0px 2px;
+            background-color: rgb(248, 94, 94);
+            color: white;
+            font-size: 14px;
+            margin-left: 10px;
+            border-radius: 2px;
+        }
+
+        .circle3 {
+            height: 15px;
+            width: 15px;
+            border: 3px solid blue;
+            border-radius: 50%;
+        }
+
+        .bx5 {
+            height: 30px;
+            width: 80%;
+            margin-left: 11%;
+            margin-top: 5px;
+            display: flex;
+        }
+
+        .small-circle {
+            margin-left: -7px;
+            height: 100%;
+            width: 12%;
+            border: 2px solid rgb(247, 242, 242);
+            border-radius: 50%;
+        }
+
+        .image3 {
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+        }
+
+        .button3 {
+            border-radius: 12px;
+            padding: 5px;
+            color: white;
+            background-color: rgb(68, 64, 84);
+            border: none;
+            margin-left: 25%;
+            margin-top: 20px;
+        }
+
+        .dropdown6 {
+            height: 390px;
+            width: 230px;
+            background-color: white;
+            position: absolute;
+            left: 53%;
+            border-radius: 5px;
+        }
+
+        .clr2 {
+            height: 20%;
+            width: 100%;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            background-image: url(./dashboard-image/city2.jpg);
+        }
+
+        .before1 {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+            height: 20%;
+            width: 100%;
+            background-color: rgba(71, 67, 86, 0.74);
+        }
+
+        .text8 {
+            text-align: center;
+            color: white;
+            margin-top: 10%;
+        }
+
+        .text9 {
+            color: blue;
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+
+        .bx6 {
+            height: max-content;
+            width: 100%;
+            padding: 5px 10px;
+            margin-top: 10px;
+            display: flex;
+        }
+
+        .blue {
+            background-color: blue;
+            color: white;
+        }
+
+        .text10 {
+            margin-left: 10px;
+        }
+
+
+        .dropD {
+            top: 0;
+            visibility: hidden;
+        }
+
+        .show {
+            visibility: visible;
+            top: 4%;
+            transition: all 0.3s linear;
+        }
+
+        .dropdown7 {
+            height: 420px;
+            width: 330px;
+            background-color: white;
+            position: absolute;
+            left: 50%;
+            /* top: 10%; */
+            border-radius: 5px;
+        }
+
+        .clr3 {
+            height: 20%;
+            width: 100%;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            background-color: rgb(86, 87, 87);
+        }
+
+        .circle-div1 {
+            height: 60px;
+            width: 60px;
+            margin: auto;
+            margin-top: 20px;
+            border-radius: 50%;
+            background-color: rgb(86, 83, 101);
+            color: white;
+            font-size: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #000;
+        }
+
+        .heading7 {
+            color: rgb(73, 80, 87);
+            text-align: center;
+            margin-top: 15px;
+            font-size: 35px;
+        }
+
+        .text11 {
+            color: rgb(73, 80, 87);
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .text12 {
+            text-align: center;
+            margin-top: 15px;
+            color: rgb(217, 37, 80);
+        }
+
+        .button4 {
+            background-color: rgb(247, 185, 36);
+            border-radius: 15px;
+            padding: 7px 15px;
+            border: none;
+            margin-left: 30%;
+            margin-top: 20px;
+        }
+
+        .dropdown8 {
+            height: 420px;
+            width: 330px;
+            background-color: white;
+            position: absolute;
+            left: 56%;
+            /* top: 10%; */
+            border-radius: 5px;
+        }
+
+        .clr4 {
+            height: 20%;
+            width: 100%;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            background-color: rgb(48, 168, 236);
+        }
+
+        .heading8 {
+            margin-top: 20px;
+            margin-left: 20px;
+            color: rgb(108, 117, 125);
+        }
+
+        .text13 {
+            margin-top: 20px;
+            margin-left: 20px;
+            color: blue;
+        }
+
+        .button5 {
+            padding: 10px;
+            position: absolute;
+            left: 75%;
+            top: 5%;
+            background-color: rgb(68, 64, 84);
+            color: white;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .box4 {
+            height: 100px;
+            width: 100%;
+            display: flex;
+            margin-top: 20px;
+            border: 1px solid rgb(222, 226, 230);
+        }
+
+        .bx7 {
+            height: 100%;
+            width: 50%;
+            border: 1px solid rgb(222, 226, 230);
+        }
+
+        .bx7:hover {
+            color: white;
+            background-color: rgb(249, 200, 83);
+        }
+
+        .bx8 {
+            height: 100%;
+            width: 50%;
+            border: 1px solid rgb(222, 226, 230);
+        }
+
+        .bx8:hover {
+            color: white;
+            background-color: rgb(217, 37, 80);
+        }
+
+        .icn15 {
+            font-size: 25px;
+            margin-left: 40%;
+        }
+
+        .heading9 {
+            color: rgb(249, 200, 83);
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .bx7:hover .heading9 {
+            color: white;
+        }
+
+        .heading10 {
+            color: rgb(217, 37, 80);
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .box5 {
+            overflow: hidden;
+            /* border: 1px solid #000; */
+            height: max-content;
+            width: 78%;
+            /* margin-left: 22%; */
+            background-color: rgb(241, 244, 246);
+        }
+
+        .increase {
+            width: 95%;
+        }
+
+        .icon-circle {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            position: fixed;
+            /* position: absolute; */
+            left: 70%;
+            top: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            animation: rotate 0.5s linear infinite;
+            background-color: rgb(247, 185, 36);
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate3d(0);
+            }
+
+            to {
+                transform: rotate3d(360deg);
+            }
+
+        }
+
+        .side-bar {
+            height: 100vh;
+            width: 40%;
+            /* border: 1px solid #000; */
+            /* margin-left: 100%; */
+            position: fixed;
+            left: 100%;
+            top: 0;
+            z-index: 22;
+            /* visibility: hidden; */
+            background-color: rgb(255, 255, 255);
+        }
+
+        .side {
+            left: 60%;
+            transition: all 0.3s linear;
+        }
+
+        .left {
+            left: -10%;
+            z-index: 100;
+            transition: all 0.3s linear;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .text14 {
+            padding: 10px;
+            border-bottom: 1px solid rgb(222, 226, 230);
+            font-size: 18px;
+        }
+
+        .bx9 {
+            border: 1px solid rgb(223, 223, 223);
+            height: max-content;
+            width: 94%;
+            margin: auto;
+            margin-top: 10px;
+            border-radius: 7px;
+        }
+
+        .bx10 {
+            border-bottom: 1px solid rgb(223, 223, 223);
+            height: 70px;
+            width: 100%;
+            display: flex;
+            /* justify-content: space-around; */
+            align-items: center;
+        }
+
+        .bd {
+            height: 35px;
+            width: 65px;
+            /* width: 65px; */
+            overflow: hidden;
+            background-color: blue;
+            margin-left: 10px;
+            border: 1px solid #000;
+        }
+
+        .bd1 {
+            display: flex;
+            width: 200%;
+        }
+
+        .bx11 {
+            height: 35px;
+            width: 65px;
+            border: 1px solid #000;
+            color: rgb(252, 248, 248);
+            display: flex;
+            padding: 2px;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 5px;
+            background-color: rgb(58, 196, 125);
+        }
+
+        .white {
+            height: 90%;
+            width: 20%;
+            border-radius: 2px;
+            background-color: rgb(235, 156, 156);
+        }
+
+        .bx12 {
+            margin-left: 10px;
+        }
+
+        .heading11 {
+            color: rgb(109, 115, 121);
+        }
+
+        .text15 {
+            color: rgb(164, 167, 171);
+            font-size: 14px;
+        }
+
+        .bx13 {
+            height: 35px;
+            width: 65px;
+            display: flex;
+            padding: 2px;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 5px;
+            /* margin-left: 10px; */
+            background-color: rgb(238, 238, 238);
+        }
+
+        .button6 {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 20px;
+            background-color: rgb(68, 64, 84);
+            color: white;
+            margin-left: 35%;
+        }
+
+        .bx14 {
+            border-bottom: 1px solid rgb(222, 226, 230);
+            height: 100px;
+            width: 90%;
+            margin: auto;
+        }
+
+        .text16 {
+            color: blue;
+            text-align: center;
+        }
+
+        .bx16 {
+            width: 90%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            /* border: 1px solid #000; */
+        }
+
+        .mini-cir {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+        }
+
+        .clr01 {
+            background-color: rgb(120, 150, 227);
+        }
+
+        .clr02 {
+            background-color: rgb(152, 158, 164);
+        }
+
+        .clr03 {
+            background-color: rgb(117, 213, 164);
+        }
+
+        .clr04 {
+            background-color: rgb(91, 195, 255);
+        }
+
+        .clr05 {
+            background-color: rgb(249, 206, 101);
+        }
+
+        .clr06 {
+            background-color: rgb(228, 102, 132);
+        }
+
+        .clr07 {
+            background-color: rgb(243, 243, 243);
+        }
+
+        .clr08 {
+            background-color: rgb(112, 117, 121);
+        }
+
+        .clr09 {
+            background-color: rgb(124, 121, 135);
+        }
+
+        .clr010 {
+            background-color: rgb(161, 129, 173);
+        }
+
+        .bx15 {
+            height: 150px;
+            width: 90%;
+            margin: auto;
+        }
+
+        .clr011 {
+            background-color: rgb(60, 71, 83);
+        }
+
+        .clr012 {
+            background-color: rgb(54, 81, 118);
+        }
+
+        .clr013 {
+            background: linear-gradient(rgb(54, 81, 118), rgb(98, 120, 159));
+        }
+
+        .clr014 {
+            background-color: rgb(113, 113, 113);
+        }
+
+        .clr015 {
+            background: linear-gradient(rgb(92, 107, 113), rgb(103, 126, 135));
+        }
+
+        .clr016 {
+            background: linear-gradient(rgb(91, 100, 113), rgb(100, 115, 133));
+        }
+
+        .clr017 {
+            background: linear-gradient(rgb(255, 192, 193), rgb(252, 214, 208));
+        }
+
+        .clr018 {
+            background: linear-gradient(rgb(203, 183, 227), rgb(248, 210, 243));
+        }
+
+        .clr019 {
+            background: linear-gradient(rgb(249, 218, 150), rgb(252, 200, 162));
+        }
+
+        .clr020 {
+            background: linear-gradient(rgb(170, 247, 207), rgb(174, 234, 230));
+        }
+
+        .clr021 {
+            background: linear-gradient(rgb(204, 202, 237), rgb(238, 175, 186));
+        }
+
+        .clr022 {
+            background: linear-gradient(rgb(233, 239, 243), rgb(223, 230, 234));
+        }
+
+        .clr023 {
+            background: linear-gradient(rgb(246, 205, 192), rgb(231, 175, 228));
+        }
+
+        .clr024 {
+            background: linear-gradient(rgb(88, 234, 254), rgb(128, 200, 255));
+        }
+
+        .clr025 {
+            background: linear-gradient(rgb(223, 213, 253), rgb(189, 214, 253));
+        }
+
+        .clr026 {
+            background: linear-gradient(rgb(245, 172, 235), rgb(247, 148, 177));
+        }
+
+        .clr027 {
+            background: linear-gradient(rgb(93, 228, 236), rgb(93, 227, 236));
+        }
+
+        .clr028 {
+            background: linear-gradient(rgb(150, 157, 230), rgb(155, 139, 204));
+        }
+
+        .clr029 {
+            background: linear-gradient(rgb(167, 237, 254), rgb(154, 206, 255));
+        }
+
+        .clr030 {
+            background: linear-gradient(rgb(101, 239, 193), rgb(79, 194, 246));
+        }
+
+        .clr031 {
+            background: linear-gradient(rgb(244, 155, 225), rgb(218, 156, 245));
+        }
+
+        .bx17 {
+            width: 40%;
+            display: flex;
+            justify-content: space-between;
+            /* border: 1px solid #000; */
+            margin: auto;
+            margin-top: 15px;
+        }
+
+        .clr032 {
+            background: linear-gradient(rgb(250, 161, 179), rgb(254, 179, 174));
+        }
+
+        .clr033 {
+            background: linear-gradient(rgb(112, 204, 172), rgb(88, 192, 148));
+        }
+
+        .clr034 {
+            background: linear-gradient(rgb(255, 193, 180), rgb(255, 99, 132));
+        }
+
+        .clr035 {
+            background: linear-gradient(rgb(120, 120, 120), rgb(83, 83, 83));
+        }
+
+        .block {
+            padding: 20px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            /* border: 1px solid #000; */
+        }
+
+        .icon-box {
+            height: max-content;
+            padding: 4px 8px;
+            width: max-content;
+            background-color: rgb(254, 254, 254);
+            /* border: 1px solid #000; */
+        }
+
+        .icn16 {
+            color: rgb(233, 181, 225);
+            font-size: 36px;
+        }
+
+        .bx18 {
+            margin-left: 20px;
+        }
+
+        .text18 {
+            font-size: 20px;
+        }
+
+        .bx19 {
+            height: 30px;
+            display: flex;
+            /* border: 1px solid #000; */
+            margin-left: 20%;
+        }
+
+        .black {
+            color: white;
+            background-color: rgb(52, 58, 64);
+            padding: 5px 8px;
+            border-radius: 3px;
+        }
+
+        .button7 {
+            background-color: rgb(22, 170, 255);
+            color: white;
+            padding: 5px 20px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .button8 {
+            padding: 10px;
+            background-color: rgb(63, 106, 216);
+            color: white;
+            border-radius: 5px;
+            border: none;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+
+        .button9 {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            margin-left: 20px;
+            /* transform: scale(0.1); */
+        }
+
+        .button9:hover {
+            background-color: rgb(63, 106, 216);
+            color: white;
+            transform: scale(1);
+        }
+
+        .block2 {
+            height: 250px;
+            width: 95%;
+            margin: auto;
+            margin-top: 20px;
+            background-color: white;
+        }
+
+        .bl1 {
+            height: 60px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            border-bottom: 1px solid rgb(226, 230, 239);
+        }
+
+        .button10 {
+            padding: 5px 10px;
+            border: 2px solid;
+            cursor: pointer;
+            transition: all 0.3s linear;
+        }
+
+        .button10:hover {
+            background-color: black;
+            color: white;
+            border: 2px solid;
+        }
+
+        .bl2 {
+            height: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid rgb(226, 230, 239);
+        }
+
+        .bl {
+            height: 100%;
+            width: 28%;
+            /* border: 1px solid #000; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .icon-div1 {
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            /* border: 1px solid #000; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+            /* margin-top: ; */
+        }
+
+        .clr36 {
+            background-color: rgb(247, 185, 36);
+        }
+
+        .clr37 {
+            background-color: rgb(220, 58, 97);
+            color: white;
+        }
+
+        .clr38 {
+            background-color: rgb(77, 201, 138);
+            color: white;
+        }
+
+        .bl3 {
+            /* border: 1px solid #000; */
+            height: 100%;
+            width: 60%;
+        }
+
+        .text19 {
+            color: rgb(146, 150, 154);
+        }
+
+        .heading12 {
+            color: rgb(77, 201, 138);
+            font-size: 37px;
+        }
+
+        .heading13 {
+            font-size: 37px;
+            color: rgb(73, 80, 87);
+        }
+
+        .clr39 {
+            color: rgb(220, 58, 97);
+        }
+
+        .clr40 {
+            color: rgb(103, 200, 255);
+        }
+
+        .clr41 {
+            color: rgb(247, 185, 36);
+        }
+
+        .button11 {
+            background-color: rgb(63, 106, 216);
+            padding: 10px 20px;
+            border-radius: 15px;
+            color: white;
+            margin-left: 40%;
+            margin-top: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .block3 {
+            height: 80vh;
+            width: 95%;
+            margin: auto;
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid #000;
+        }
+
+        .bl4 {
+            height: 100%;
+            width: 45%;
+            border: 1px solid #000;
+        }
+
+        .bl5 {
+            height: 60px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid rgb(226, 230, 239);
+        }
+
+        .icn17 {
+            font-size: 24px;
+            color: blue;
+        }
+
+        .text20 {
+            margin-left: 10px;
+            font-size: 20px;
+        }
+
+        .icn18 {
+            font-size: 24px;
+            color: #000;
+            margin-left: 50%;
+        }
+
+        .icn19 {
+            color: pink;
+            font-size: 24px;
+        }
+
+        .block4 {
+            height: 40vh;
+            width: 95%;
+            margin: auto;
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            /* border: 1px solid #000; */
+        }
+
+        .bl6 {
+            height: 100%;
+            width: 23%;
+            border-radius: 5px;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .text21 {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        .text22 {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .imag {
+            height: max-content;
+            width: max-content;
+            margin-top: 15px;
+            margin-left: 20px;
+        }
+
+        .clr036 {
+            border-bottom: 4px solid rgb(58, 196, 125);
+        }
+
+        .clr037 {
+            border-bottom: 4px solid rgb(63, 106, 216);
+        }
+
+        .clr038 {
+            border-bottom: 4px solid rgb(247, 185, 36);
+        }
+
+        .clr039 {
+            border-bottom: 4px solid rgb(217, 37, 80);
+        }
+
+        .block5 {
+            height: 110vh;
+            width: 95%;
+            border: 1px solid #000;
+            margin: auto;
+            margin-top: 40px;
+        }
+
+        .bl7 {
+            height: 50px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgb(226, 230, 239);
+        }
+
+        .icn20 {
+            font-size: 24px;
+        }
+
+        .icn21 {
+            font-size: 24px;
+            margin-left: 75%;
+        }
+
+        .side-bar1 {
+            height: 100vh;
+            width: 35%;
+            background-color: white;
+            border: 1px solid #000;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            z-index: 5;
+        }
+
+        .bl8 {
+            height: 30%;
+            width: 90%;
+            border-bottom: 1px solid rgb(229, 229, 229);
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .b-circle {
+            height: 110px;
+            width: 110px;
+            border-radius: 50%;
+            border: 8px solid rgb(229, 229, 229);
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+        }
+
+        .heading14 {
+            font-size: 16px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .bl10 {
+            height: 80px;
+            width: 90%;
+            border-bottom: 1px solid rgb(229, 229, 229);
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .text23 {
+            text-align: center;
+        }
+
+        .text24 {
+            text-align: center;
+            color: rgb(146, 150, 154);
+        }
+
+        .clr040 {
+            color: rgb(247, 185, 36);
+        }
+
+        .clr041 {
+            color: rgb(217, 37, 80);
+        }
+
+        .clr042 {
+            color: rgb(58, 196, 125);
+        }
+
+        .bl12 {
+            height: 80px;
+            width: 100%;
+            border-bottom: 1px solid rgb(229, 229, 229);
+        }
+
+        .button12 {
+            color: rgb(217, 37, 80);
+            border: none;
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-left: 25%;
+            margin-top: 3%;
+        }
+
+        .button12:hover {
+            background-color: rgb(217, 37, 80);
+            color: white;
+        }
+
+        .button13 {
+            color: rgb(58, 196, 125);
+            border: none;
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .button13:hover {
+            background-color: rgb(58, 196, 125);
+            color: white;
+        }
+
+        .cross {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            border: 1px solid #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: blue;
+            position: absolute;
+            left: 85%;
+            top: 0;
+        }
+
+        .left {
+            left: 65%;
+            transition: all 0.5s linear;
+        }
+
+        .move {
+            margin-left: -100%;
+        }
+
+        .fix {
+            position: static;
+        }
+
+        .margin {
+            margin-top: 0;
+        }
+        .boxx{
+            height: max-content;
+            width: 300px;
+            position: fixed;
+            left: 45%;
+            top: 0%;
+            /* display: none; */
+            padding: 20px;
+        }
+        /* .skyblue-box{
+            height: 70px;
+            width: 100%;
+            background-color: rgb(45,178,255);
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .dark-line{
+            height: 3px;
+            width: 100%;
+            background-color: rgb(37,117,163);
+        } */
+        
+    </style>
+</head>
+
+<body>
+    <section class="first">
+        <div class="navbar">
+            <div class="logo-div">
+                <img src="./dashboard-image/logo-inverse.png" alt="">
+                <i onclick="right()" class="bi bi-list icn1"></i>
+            </div>
+            <div class="input-div">
+                <input class="inp" type="text" placeholder="Type to search">
+                <div class="circle">
+                    <i onclick="inc()" class="bi bi-search icn5"></i>
+                </div>
+                <i onclick="disp()" class="bi bi-x-lg icn4"></i>
+            </div>
+            <ul class="list">
+                <li class="lst select">
+                    <i class="bi bi-gift icn6"></i>
+                    Mega Menu
+                    <i class="bi bi-chevron-down icn7"></i>
+                </li>
+                <div class="dropdown1 dropD">
+                    <div class="box1">
+                        <p class="text">Overview</p>
+                        <ul class="list1">
+                            <li class="lst1">
+                                <i class="bi bi-inbox"></i>
+                                Contacts
+                            </li>
+                            <li class="lst1">
+                                <i class="bi bi-book"></i>
+                                Incidents
+                                <div class="red-circle1">5</div>
+                            </li>
+                            <li class="lst1">
+                                <i class="bi bi-image-fill"></i>
+                                Companies
+                            </li>
+                            <li class="lst1">
+                                <i class="bi bi-file-earmark"></i>
+                                Dashboards
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="box1">
+                        <p class="text">Favourites</p>
+                        <ul class="list1">
+                            <li class="lst1">Reports Conversions</li>
+                            <li class="lst1">Quick Start
+                                <div class="green-div">NEW</div>
+                            </li>
+                            <li class="lst1">Users & Groups</li>
+                            <li class="lst1">Proprieties</li>
+                        </ul>
+                    </div>
+                    <div class="box1">
+                        <p class="text">Sales & Marketing</p>
+                        <li class="lst1">Queues</li>
+                        <li class="lst1">Resource Groups</li>
+                        <li class="lst1">Goal Metrics
+                            <div class="yellow-div">3</div>
+                        </li>
+                        <li class="lst1">Campaigns</li>
+                    </div>
+                </div>
+                <li class="lst select">
+                    <div class="red-circle icn6">4</div>
+                    Settings
+                    <i class="bi bi-chevron-down icn7"></i>
+                </li>
+                <div class="dropdown2 dropD">
+                    <img class="image1" src="./dashboard-image/abstract2.jpg" alt="">
+                    <h4 class="heading3">Overview</h4>
+                    <p class="text1">Dropdown menus for everyone</p>
+                    <h5 class="heading4">KEY FIGURES</h5>
+                    <ul class="list1">
+                        <li class="lst2">Service Calender</li>
+                        <li class="lst2">Knowledge Base</li>
+                        <li class="lst2">Accounts</li>
+                    </ul>
+                    <button class="button">Cancel</button>
+                </div>
+
+
+
+
+
+
+                <li class="lst select">
+                    <i class="bi bi-gear-wide icn6"></i>
+                    Project
+                    <i class="bi bi-chevron-down icn7"></i>
+                </li>
+
+                <div class="dropdown3 dropD">
+                    <img class="image1" src="./dashboard-image/abstract3.jpg" alt="">
+                    <h4 class="heading5">Overview</h4>
+                    <p class="text2">Unlimited options</p>
+                    <button class="button1">Setting</button>
+                    <div class="yellow">
+                        <i class="bi bi-gear-wide"></i>
+                    </div>
+                    <ul class="list1">
+                        <li class="lst2">
+                            <i class="bi bi-file-earmark"></i>
+                            Graphic Design
+                        </li>
+                        <li class="lst2">
+                            <i class="bi bi-file-earmark"></i>
+                            App Development
+                        </li>
+                        <li class="lst2">
+                            <i class="bi bi-file-earmark"></i>
+                            Icon Design
+                        </li>
+                        <li class="lst2">
+                            <i class="bi bi-file-earmark"></i>
+                            Miscellaneous
+                        </li>
+                        <li class="lst2">
+                            <i class="bi bi-file-earmark"></i>
+                            Frontend Dev
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </ul>
+            <div class="icon-div">
+                <div class="circle-div select">
+                    <i class="bi bi-grid-3x3-gap-fill icn8"></i>
+                </div>
+                <div class="dropdown4 dropD">
+                    <div class="clr">
+                        <div class="heading5">Grid Dashboard</div>
+                        <p class="text4">Easy grid navigation inside dropdowns</p>
+                    </div>
+                    <div class="box3">
+                        <div class="bx3">
+                            <i class="bi bi-browser-edge icn14"></i>
+                            <p class="text5">Automation</p>
+                        </div>
+                        <div class="bx3">
+                            <i class="bi bi-piggy-bank icn14"></i>
+                            <p class="text5">Reports</p>
+
+                        </div>
+                        <div class="bx3">
+                            <i class="bi bi-gear icn14"></i>
+                            <p class="text5">Settings</p>
+
+                        </div>
+                    </div>
+                    <div class="box3">
+                        <div class="bx3">
+                            <i class="bi bi-calendar icn14"></i>
+                            <p class="text5">Content</p>
+
+                        </div>
+                        <div class="bx3">
+                            <i class="bi bi-hourglass-split icn14"></i>
+                            <p class="text5">Activity</p>
+
+                        </div>
+                        <div class="bx3">
+                            <i class="bi bi-person-lines-fill icn14"></i>
+                            <p class="text5">Contacts</p>
+
+                        </div>
+                    </div>
+                    <button class="button2">Follow-ups</button>
+                </div>
+                <div class="circle-div select">
+                    <i class="bi bi-bell-fill icn9"></i>
+                </div>
+                <div class="dropdown5 dropD">
+                    <div class="clr1">
+                        <div class="before">
+                            <h5 class="heading6">Notification</h5>
+                            <p class="text6">You have 21 unread messages</p>
+                        </div>
+                    </div>
+                    <ul class="list2">
+                        <li class="lst3 lst03">Messages</li>
+                        <li class="lst3">Events</li>
+                        <li class="lst3">System Error</li>
+                    </ul>
+                    <div class="bx4">
+                        <div class="circle0"></div>
+                        <p class="text7">All Hands Meeting</p>
+                    </div>
+                    <div class="bx4">
+                        <div class="circle1"></div>
+                        <p class="text7">Yet another one, at 15:00 PM</p>
+                    </div>
+                    <div class="bx4">
+                        <div class="circle2"></div>
+                        <p class="text7">Build the production release</p>
+                        <div class="red">NEW</div>
+                    </div>
+                    <div class="bx4">
+                        <div class="circle3"></div>
+                        <p class="text7">Something not important</p>
+                    </div>
+                    <div class="bx5">
+                        <div class="small-circle">
+                            <img class="image3" src="./dashboard-image/1.jpg" alt="">
+                        </div>
+                        <div class="small-circle">
+                            <img class="image3" src="./dashboard-image/2.jpg" alt="">
+                        </div>
+                        <div class="small-circle">
+                            <img class="image3" src="./dashboard-image/3.jpg" alt="">
+                        </div>
+                        <div class="small-circle">
+                            <img class="image3" src="./dashboard-image/4.jpg" alt="">
+                        </div>
+                        <div class="small-circle">
+                            <img class="image3" src="./dashboard-image/5.jpg" alt="">
+                        </div>
+                        <div class="small-circle">
+                            <img class="image3" src="./dashboard-image/6.jpg" alt="">
+                        </div>
+                        <div class="small-circle">
+                            <img class="image3" src="./dashboard-image/8.jpg" alt="">
+                        </div>
+                        <div class="small-circle">
+                            <img class="image3" src="./dashboard-image/9.jpg" alt="">
+
+                        </div>
+
+                    </div>
+                    <button class="button3">View Latest Changes</button>
+                </div>
+                <div class="circle-div select">
+                    <img class="cir-div" src="./dashboard-image/DE.svg" alt="">
+                </div>
+                <div class="dropdown6 dropD">
+                    <div class="clr2">
+                        <div class="before1">
+                            <p class="text8">Choose Language</p>
+                        </div>
+                    </div>
+                    <h5 class="text9">POPULAR LANGUAGE</h5>
+                    <div class="bx6">
+                        <img src="./dashboard-image/US.svg" alt="">
+                        <p class="text10">USA</p>
+                    </div>
+                    <div class="bx6">
+                        <img src="./dashboard-image/CH.svg" alt="">
+                        <p class="text10">Switzerland</p>
+                    </div>
+                    <div class="bx6">
+                        <img src="./dashboard-image/FR.svg" alt="">
+                        <p class="text10">France</p>
+                    </div>
+                    <div class="bx6">
+                        <img src="./dashboard-image/ES.svg" alt="">
+                        <p class="text10">Spain</p>
+                    </div>
+                    <h5 class="text9">OTHERS</h5>
+                    <div class="bx6 blue">
+                        <img src="./dashboard-image/DE.svg" alt="">
+                        <p class="text10">Germany</p>
+                    </div>
+                    <div class="bx6">
+                        <img src="./dashboard-image/IT.svg" alt="">
+                        <p class="text10">italy</p>
+                    </div>
+                </div>
+                <div class="circle-div select">
+                    <i class="bi bi-globe-americas icn10"></i>
+                </div>
+                <div class="dropdown7 dropD">
+                    <div class="clr3">
+                        <div class="heading5">User Online</div>
+                        <p class="text4">Recent Account Activity Overview</p>
+                    </div>
+                    <div class="circle-div1">
+                        <i class="bi bi-person"></i>
+                    </div>
+                    <h1 class="heading7">344k</h1>
+                    <p class="text11">Profile views since last login</p>
+                    <p class="text12">176%
+                        <i class="bi bi-arrow-left"></i>
+                    </p>
+                    <button class="button4"><i class="bi bi-gear"></i> View Details</button>
+                </div>
+
+            </div>
+            <div class="box2">
+                <img class="image2 select" src="./dashboard-image/download.jpg" alt="">
+                <i class="bi bi-chevron-down icn11"></i>
+                <div class="dropdown8 dropD">
+                    <div class="clr4">
+                        <div class="heading5">Alina Mclourd</div>
+                        <p class="text4">A short profile description</p>
+                        <button class="button5">Logout</button>
+                    </div>
+                    <h5 class="heading8">ACTIVITY</h5>
+                    <P class="text13">Chat</P>
+                    <p class="text13">Recover Password</p>
+                    <h5 class="heading8">MY ACCOUNT</h5>
+                    <div class="box4">
+                        <div class="bx7">
+                            <i class="bi bi-chat-left icn15"></i>
+                            <h5 class="heading9">Message Inbox</h5>
+                        </div>
+                        <div class="bx8">
+                            <i class="bi bi-tag icn15"></i>
+                            <h5 class="heading10">Support Tickets</h5>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="bx">
+                    <h5 class="heading6">Alina Mclourd</h5>
+                    <p class="text3">VP People Manager</p>
+                </div>
+                <div class="blue-div">
+                    <i class="bi bi-calendar-fill icn12"></i>
+                </div>
+            </div>
+            <div class="line"></div>
+            <i onclick="mv()" class="bi bi-list icn13"></i>
+        </div>
+        <div class="side-bar1">
+            <div class="bl7">
+                <p class="text20">Server Status</p>
+            </div>
+            <div class="bl8">
+                <div class="bl9">
+                    <h4>SERVER LOAD 1</h4>
+                    <div class="b-circle">51%</div>
+                </div>
+                <div class="bl9">
+                    <h4>SERVER LOAD 2</h4>
+                    <div class="b-circle">16%</div>
+                </div>
+                <div class="bl9">
+                    <h4>SERVER LOAD 3</h4>
+                    <div class="b-circle">51%</div>
+                </div>
+            </div>
+            <h6 class="heading14">LIVE STATISTICS</h6>
+            <div class="imag">
+                <img src="./dashboard-image/Screenshot 2023-08-20 223743.png" alt="">
+            </div>
+            <div class="bl10">
+                <div class="bl11">
+                    <h2 class="text23 clr040">43</h2>
+                    <p class="text24">Packages</p>
+                </div>
+                <div class="bl11">
+                    <h2 class="text23 clr041">65</h2>
+                    <p class="text24">Dropped</p>
+                </div>
+                <div class="bl11">
+                    <h2 class="text23 clr042">18</h2>
+                    <p class="text24">Invalid</p>
+                </div>
+            </div>
+            <div class="bl12">
+                <button class="button12">Escalate Issue</button>
+                <button class="button13">Support Center</button>
+            </div>
+            <div onclick="cl( )" class="cross">
+                <i class="bi bi-x-lg"></i>
+            </div>
+        </div>
+        <div class="main">
+            <div onclick="right()" class="box">
+                <h4 class="heading1">MENU</h4>
+                <div class="bx">
+                    <div class="bx0">
+                        <i class="bi bi-rocket icn2"></i>
+                        <span class="heading2">Dashboards</span>
+                        <i class="bi bi-chevron-down icn3"></i>
+                    </div>
+                    <div class="drop1">
+                        <ul>
+                            <li class="list0">Analytics</li>
+                            <li class="list0">Commerce</li>
+                            <li class="list0">Sales</li>
+                            <li class="list0">Minimal</li>
+                            <li class="list0">CRM</li>
+
+                        </ul>
+                    </div>
+                    <div class="bx0">
+                        <i class="bi bi-file-earmark icn2"></i>
+                        <span class="heading2">Pages</span>
+                        <i class="bi bi-chevron-down icn3"></i>
+                    </div>
+                    <div class="drop1">
+                        <ul>
+                            <li class="list0">Login</li>
+                            <li class="list0">Login Boxed</li>
+                            <li class="list0">Register</li>
+                            <li class="list0">Register Boxed</li>
+                            <li class="list0">Forgot Password</li>
+                            <li class="list0">Forgot Password Boxed</li>
+
+
+                        </ul>
+                    </div>
+                    <div class="bx0">
+                        <i class="bi bi-window-dock icn2"></i>
+                        <span class="heading2">Application</span>
+                        <i class="bi bi-chevron-down icn3"></i>
+                    </div>
+                    <div class="drop1">
+                        <ul>
+                            <li class="list0">MailBox</li>
+                            <li class="list0">Chat</li>
+                            <li class="list0">FAQ Section</li>
+                            <li class="list0">Forums</li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <h4 class="heading1">UI COMPONENTS</h4>
+                <div class="bx">
+                    <div class="bx0">
+                        <i class="bi bi-gem icn2"></i>
+                        <span class="heading2">Elements</span>
+                        <i class="bi bi-chevron-down icn3"></i>
+                    </div>
+                    <div class="drop1">
+                        <ul>
+                            <li class="list0">Buttons</li>
+                            <li class="list0">Dropdowns</li>
+                            <li class="list0">Icons</li>
+                            <li class="list0">Badges</li>
+                            <li class="list0">Cards</li>
+                            <li class="list0">Loading Indicators</li>
+                            <li class="list0">List Groups</li>
+                            <li class="list0">Navigation Menus</li>
+                            <li class="list0">Timeline</li>
+                            <li class="list0">Utilities</li>
+                        </ul>
+                    </div>
+                    <div class="bx0">
+                        <i class="bi bi-truck-front icn2"></i>
+                        <span class="heading2">Components</span>
+                        <i class="bi bi-chevron-down icn3"></i>
+                    </div>
+                    <div class="drop1">
+                        <ul>
+                            <li class="list0">Tabs</li>
+                            <li class="list0">Accordians</li>
+                            <li class="list0">Notifications</li>
+                            <li class="list0">Modals</li>
+                            <li class="list0">Loading Blockers</li>
+                            <li class="list0">Progress Bar</li>
+                            <li class="list0">Tooltips & Popovers</li>
+                            <li class="list0">Carousel</li>
+                            <li class="list0">Calendar</li>
+                            <li class="list0">Pagination</li>
+                            <li class="list0">Count Up</li>
+                            <li class="list0">Scrollable</li>
+                            <li class="list0">Tree Veiw</li>
+                            <li class="list0">Maps</li>
+                            <li class="list0">Rating</li>
+                            <li class="list0">Image Crop</li>
+                            <li class="list0">Guided Tours</li>
+
+                        </ul>
+                    </div>
+                    <div class="bx0">
+                        <i class="bi bi-pc-display-horizontal icn2"></i>
+                        <span class="heading2">Tables</span>
+                        <i class="bi bi-chevron-down icn3"></i>
+                    </div>
+                    <div class="drop1">
+                        <ul>
+                            <li class="list0">Data Tables</li>
+                            <li class="list0">Regular Tables</li>
+                            <li class="list0">Grid Tables</li>
+                        </ul>
+                    </div>
+
+                    <h4 class="heading1">DASHBOARD WIDGETS</h4>
+                    <div class="bx">
+                        <i class="bi bi-pie-chart icn2"></i>
+                        <span class="heading2">Chart Boxes 1</span>
+                    </div>
+                    <div class="bx">
+                        <i class="bi bi-truck-front icn2"></i>
+                        <span class="heading2">Chart Boxes 2</span>
+                    </div>
+                    <div class="bx">
+                        <i class="bi bi-globe icn2"></i>
+                        <span class="heading2">Chart Boxes 3</span>
+                    </div>
+                    <div class="bx">
+                        <i class="bi bi-person-square icn2"></i>
+                        <span class="heading2">Chart Boxes 4</span>
+                    </div>
+                    <h4 class="heading1">FORMS</h4>
+                    <div class="bx">
+                        <i class="bi bi-lightbulb icn2"></i>
+                        <span class="heading2">Elements</span>
+                        <i class="bi bi-chevron-down icn3"></i>
+                    </div>
+                    <div class="bx">
+                        <i class="bi bi-controller icn2"></i>
+                        <span class="heading2">Widgets</span>
+                        <i class="bi bi-chevron-down icn3"></i>
+                    </div>
+                    <h4 class="heading1">CHARTS</h4>
+                    <div class="bx">
+                        <i class="bi bi-graph-up icn2"></i>
+                        <span class="heading2">ChartJS</span>
+                    </div>
+                    <div class="bx">
+                        <i class="bi bi-pie-chart icn2"></i>
+                        <span class="heading2">Apex Charts</span>
+                    </div>
+                    <div class="bx">
+                        <i class="bi bi-diagram-2 icn2"></i>
+                        <span class="heading2">Chart Sparklines</span>
+                    </div>
+                </div>
+            </div>
+            <div class="boxx">
+                <!-- <div class="skyblue-box">
+                    <i class="bi bi-chat-dots"></i>
+                    <div>
+                        <h5>Example Toastr</h5>
+                        <p>You don't have any new items in your <br> calendar today!</p>
+                    </div>
+                </div> -->
+                <!-- <div class="dark-line"></div> -->
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="box5">
+                <div class="block">
+                    <div class="icon-box">
+                        <i class="bi bi-car-front icn16"></i>
+                    </div>
+                    <div class="bx18">
+                        <p class="text18">Analytics Dashboard</p>
+                        <p>This is an example dashboard created using build-in elements and components.</p>
+                    </div>
+                    <div class="bx19">
+                        <div class="black">
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <button class="button7">Buttons</button>
+                    </div>
+                </div>
+                <div class="block1">
+                    <button class="button8">Variation 1</button>
+                    <button class="button9">Variation 2</button>
+
+                </div>
+                <div class="block2">
+                    <div class="bl1">
+                        <p>Portfolio Performance</p>
+                        <button class="button10">View All</button>
+                    </div>
+                    <div class="bl2">
+                        <div class="bl">
+                            <div class="icon-div1 clr36">
+                                <i class="bi bi-laptop"></i>
+                            </div>
+                            <div class="bl3">
+                                <p class="text19">Capital Gains</p>
+                                <h1 class="heading13">1,7M</h1>
+                                <p><span class="clr39">
+                                        <i class="bi bi-chevron-up"></i>
+                                        54.1%</span> less earning</p>
+                            </div>
+                        </div>
+                        <div class="bl">
+                            <div class="icon-div1 clr37">
+                                <i class="bi bi-mortarboard"></i>
+                            </div>
+                            <div class="bl3">
+                                <p class="text19">Capital Gains</p>
+                                <h1 class="heading13">$563</h1>
+                                <p>Grow Rate: <span class="clr40">
+                                        <i class="bi bi-chevron-up"></i>
+                                        14.1%</span></p>
+                            </div>
+                        </div>
+                        <div class="bl">
+                            <div class="icon-div1 clr38">
+                                <i class="bi bi-buildings"></i>
+                            </div>
+                            <div class="bl3">
+                                <p class="text19">Capital Gains</p>
+                                <h1 class="heading12">$563</h1>
+                                <p>Increased by <span class="clr41">
+                                        <i class="bi bi-chevron-up"></i>
+                                        7.35%</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="button11">View Complete Report</button>
+                </div>
+                <div class="block3">
+                    <div class="bl4">
+                        <div class="bl5">
+                            <i class="bi bi-cloud-download icn17"></i>
+                            <p class="text20">Technical Support</p>
+                            <i class="bi bi-list icn18"></i>
+                        </div>
+                    </div>
+                    <div class="bl4">
+                        <div class="bl5">
+                            <i class="bi bi-lightning icn19"></i>
+                            <p class="text20">Timeline Example</p>
+                            <i class="bi bi-list icn18"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="block4">
+                    <div class="bl6 clr036">
+                        <h1 class="text21">$ 874</h1>
+                        <p class="text22">sales last month</p>
+                        <div class="imag">
+                            <img src="./dashboard-image/Screenshot 2023-08-20 202022.png" alt="">
+                        </div>
+                    </div>
+                    <div class="bl6 clr037">
+                        <h1 class="text21">$ 1283</h1>
+                        <p class="text22">sales income</p>
+                        <div class="imag">
+                            <img src="./dashboard-image/Screenshot 2023-08-20 202126.png" alt="">
+                        </div>
+                    </div>
+                    <div class="bl6 clr038">
+                        <h1 class="text21">$ 1286</h1>
+                        <p class="text22">last month sales</p>
+                        <div class="imag">
+                            <img src="./dashboard-image/Screenshot 2023-08-20 202152.png" alt="">
+                        </div>
+                    </div>
+                    <div class="bl6 clr039">
+                        <h1 class="text21">$ 564</h1>
+                        <p class="text22">total revenue</p>
+                        <div class="imag">
+                            <img src="./dashboard-image/Screenshot 2023-08-20 202213.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="block5">
+                    <div class="bl7">
+                        <i class="bi bi-laptop icn20"></i>
+                        <p class="text20">Easy Dynamic Tables</p>
+                        <i class="bi bi-list icn21"></i>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div onclick="side()" class="icon-circle">
+                    <i class="bi bi-gear"></i>
+                </div>
+                <div class="side-bar">
+                    <p class="text14">Layout Options</p>
+                    <div class="bx9">
+                        <div class="bx10">
+                            <div class="bd">
+                                <div class="bd1">
+
+                                    <div onclick="move()" class="bx11">On
+                                        <div class="white"></div>
+                                    </div>
+                                    <div onclick="clse()" class="bx13">
+                                        <div class="white"></div>
+                                        Off
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bx12">
+                                <h4 class="heading11">Fixed Header</h4>
+                                <p class="text15">Makes the header top fixed, always visible!</p>
+                            </div>
+                        </div>
+                        <div class="bx10">
+                            <div class="bd">
+                                <div class="bd1">
+                                    <div class="bx11">On
+                                        <div class="white"></div>
+                                    </div>
+                                    <div class="bx13">
+                                        <div class="white"></div>
+                                        Off
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bx12">
+                                <h4 class="heading11">Fixed Header</h4>
+                                <p class="text15">Makes the sidebar left fixed, always visible!</p>
+                            </div>
+                        </div>
+                        <div class="bx10">
+                            <div class="bd">
+                                <div class="bd1">
+                                    <div class="bx13">
+                                        <div class="white"></div>
+                                        Off
+                                    </div>
+                                    <div class="bx11">On
+                                        <div class="white"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bx12">
+                                <h4 class="heading11">Fixed Header</h4>
+                                <p class="text15">Makes the app footer bottom fixed, always visible!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="text14">Header Options
+                        <button class="button6">Restore Default</button>
+                    </p>
+
+                    <div class="bx9">
+                        <div class="bx14">
+                            <p class="text16">CHOOSE COLOR SCHEME</p>
+                            <div class="bx16">
+                                <div class="mini-cir clr01"></div>
+                                <div class="mini-cir clr02"></div>
+                                <div class="mini-cir clr03"></div>
+                                <div class="mini-cir clr04"></div>
+                                <div class="mini-cir clr05"></div>
+                                <div class="mini-cir clr06"></div>
+                                <div class="mini-cir clr07"></div>
+                                <div class="mini-cir clr08"></div>
+                                <div class="mini-cir clr09"></div>
+                                <div class="mini-cir clr010"></div>
+                            </div>
+
+                        </div>
+                        <div class="bx15">
+                            <div class="bx16">
+                                <div class="mini-cir clr011"></div>
+                                <div class="mini-cir clr012"></div>
+                                <div class="mini-cir clr013"></div>
+                                <div class="mini-cir clr014"></div>
+                                <div class="mini-cir clr015"></div>
+                                <div class="mini-cir clr016"></div>
+                                <div class="mini-cir clr017"></div>
+                                <div class="mini-cir clr018"></div>
+                                <div class="mini-cir clr019"></div>
+                                <div class="mini-cir clr020"></div>
+                                <div class="mini-cir clr021"></div>
+                            </div>
+                            <div class="bx16">
+                                <div class="mini-cir clr022"></div>
+                                <div class="mini-cir clr023"></div>
+                                <div class="mini-cir clr024"></div>
+                                <div class="mini-cir clr025"></div>
+                                <div class="mini-cir clr026"></div>
+                                <div class="mini-cir clr027"></div>
+                                <div class="mini-cir clr028"></div>
+                                <div class="mini-cir clr029"></div>
+                                <div class="mini-cir clr030"></div>
+                                <div class="mini-cir clr031"></div>
+                                <div class="mini-cir clr032"></div>
+                            </div>
+                            <div class="bx17">
+                                <div class="mini-cir clr032"></div>
+                                <div class="mini-cir clr033"></div>
+                                <div class="mini-cir clr034"></div>
+                                <div class="mini-cir clr035"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+
+
+
+    <script src="./dashboard.js">
+
+
+    </script>
+
+</body>
+
+</html>
